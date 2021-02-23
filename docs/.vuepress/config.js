@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   title: 'Blog',
-  base: '/blog/',
+  base: '/my-blog/',
   theme: '@vuepress/theme-blog',
   themeConfig: {
     nav: [
