@@ -17,3 +17,7 @@ npm run build
 # publish
 npm run build --report
 ```
+
+## The follow-up to optimize
+
+CI/CD is implemented through GitHub Actions
