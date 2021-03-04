@@ -18,6 +18,10 @@ npm run build
 npm run build --report
 ```
 
+## markdown-it demo
+
+[Markdown-it](https://markdown-it.github.io/)
+
 ## The follow-up to optimize
 
 CI/CD is implemented through GitHub Actions
