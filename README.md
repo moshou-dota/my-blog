@@ -25,3 +25,7 @@ npm run build --report
 ## The follow-up to optimize
 
 CI/CD is implemented through GitHub Actions
+
+## web site
+
+https://moshou-dota.github.io/my-blog/
