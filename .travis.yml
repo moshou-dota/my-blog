@@ -1,9 +1,6 @@
 language: node_js
-env:
-  global:
-    - $GITHUB_TOKEN=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
 node_js:
-  - lts/*
+  - "12"
 install:
   - npm install # yarn install
 script:
