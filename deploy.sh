@@ -17,9 +17,9 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:moshou-dota/my-blog.git main:gh-pages
-
+git push -f git@github.com:moshou-dota/my-blog.git master:gh-pages
+# 因为 docs/.vuepress/dist 的本地分支为 master：https://www.cnblogs.com/dyh-air/p/9257237.html
 cd -
