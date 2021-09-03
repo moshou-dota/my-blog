@@ -8,6 +8,7 @@ dist
 .DS_Store
 .nyc_output
 .basement
+package-lock.json
 config.local.js
 basement_dist
 /.vscode
