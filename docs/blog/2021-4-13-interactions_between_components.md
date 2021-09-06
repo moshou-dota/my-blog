@@ -169,3 +169,5 @@ var Provider = {
   // ...
 }
 ```
+
+<Vssue :title="$title" />

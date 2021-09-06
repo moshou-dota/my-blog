@@ -942,7 +942,7 @@
   resolved "https://registry.npm.taobao.org/@types/q/download/@types/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha1-FZJUFOCtLNdlv+9YhC9+JqesyyQ=
 
-"@vssue/api-github-v3@^1.1.2":
+"@vssue/api-github-v3@^1.1.2", "@vssue/api-github-v3@^1.4.7":
   version "1.4.7"
   resolved "https://registry.npm.taobao.org/@vssue/api-github-v3/download/@vssue/api-github-v3-1.4.7.tgz#7e30304111ac34b5785abe2f99be8dcc04e94cdf"
   integrity sha1-fjAwQRGsNLV4Wr4vmb6NzATpTN8=
@@ -964,6 +964,13 @@
   integrity sha1-Da43+4zFMphZuK8KV7YuvPgb67g=
   dependencies:
     vssue "^1.4.7"
+
+"@vssue/vuepress-plugin-vssue@^1.4.8":
+  version "1.4.8"
+  resolved "https://registry.nlark.com/@vssue/vuepress-plugin-vssue/download/@vssue/vuepress-plugin-vssue-1.4.8.tgz#37b8ada338c1222a143eb648555372d2959f4624"
+  integrity sha1-N7itozjBIioUPrZIVVNy0pWfRiQ=
+  dependencies:
+    vssue "^1.4.8"
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
@@ -1173,6 +1180,13 @@
   version "1.8.2"
   resolved "https://registry.npm.taobao.org/@vuepress/plugin-active-header-links/download/@vuepress/plugin-active-header-links-1.8.2.tgz#0cb9b29c826dd97d35357a9b09c962ef782cb793"
   integrity sha1-DLmynIJt2X01NXqbCcli73gst5M=
+  dependencies:
+    lodash.debounce "^4.0.8"
+
+"@vuepress/plugin-back-to-top@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.nlark.com/@vuepress/plugin-back-to-top/download/@vuepress/plugin-back-to-top-1.8.2.tgz#e9794409d1d589e4952b0700291270d2696e6d01"
+  integrity sha1-6XlECdHVieSVKwcAKRJw0mlubQE=
   dependencies:
     lodash.debounce "^4.0.8"
 
@@ -7871,6 +7885,17 @@ vssue@^1.4.7:
   version "1.4.7"
   resolved "https://registry.npm.taobao.org/vssue/download/vssue-1.4.7.tgz#d8b6fc3ddd6995ac1848ff7c99c281e079da30e4"
   integrity sha1-2Lb8Pd1plawYSP98mcKB4HnaMOQ=
+  dependencies:
+    "@vssue/utils" "^1.4.7"
+    github-markdown-css "^3.0.1"
+    vue "^2.6.10"
+    vue-i18n "^8.11.2"
+    vue-property-decorator "^8.1.1"
+
+vssue@^1.4.8:
+  version "1.4.8"
+  resolved "https://registry.nlark.com/vssue/download/vssue-1.4.8.tgz#e0de059d16bf870dd7d72735d71761dfedfcfeb5"
+  integrity sha1-4N4FnRa/hw3X1yc11xdh3+38/rU=
   dependencies:
     "@vssue/utils" "^1.4.7"
     github-markdown-css "^3.0.1"

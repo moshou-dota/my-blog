@@ -77,5 +77,18 @@ module.exports = {
   },
   alias: {
     "@assets": path.resolve(__dirname, "../assets")
-  }
+  },
+  plugins: [
+    ['@vssue/vuepress-plugin-vssue', {
+      // 设置 `platform` 而不是 `api`
+      platform: 'github',
+
+      // 其他的 Vssue 配置
+      owner: 'moshou-dota',
+      repo: 'my-blog',
+      clientId: '61566c68c44d43e66074',
+      clientSecret: '9ce9ff8cb78e6817d304a9710b673a9e07aed468',
+    }],
+    ['@vuepress/back-to-top']
+  ],
 }

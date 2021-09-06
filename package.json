@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/theme-blog": "^2.3.3",
     "vuepress": "^1.8.2"
   },
@@ -8,5 +9,13 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "publish": "sh deploy.sh"
+  },
+  "homepage": "https://moshou-dota.github.io/my-blog/",
+  "keywords": [
+    "vuepress"
+  ],
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8"
   }
 }
