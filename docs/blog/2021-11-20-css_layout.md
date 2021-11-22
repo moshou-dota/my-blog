@@ -1347,6 +1347,29 @@ html,body{
 
 如在某些滚动加载动画中，会用到`transform`提升交互效果，此时如果内部有用到`position:fixed`布局，就会出现闪烁现象（在滚动加载动画出现时消失，动画结束后又再次出现固定在原地）
 
+#### scroll 兼容处理
+
+全局滚动，不同浏览器内核有区别， 有的是body，有的是html，对此我的做法是：用一个全局的div滚动充当全局滚动
+
+```html
+<html>
+    <head>
+        <style>
+            html,
+            body {
+                overflow: hidden;
+            }
+            .container {
+                overflow-y: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container"></div>
+    </body>
+</html>
+```
+
 ### 参考文章
 
 [8则未必知道且超级实用的纯CSS布局排版技巧 | 网易四年实践](https://juejin.cn/post/6986873449721364510)
