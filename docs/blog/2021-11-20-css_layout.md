@@ -1339,6 +1339,110 @@ html,body{
 }
 ```
 
+### CSS 实现内容的展开收起
+
+```html
+<body>
+  <div class="task-desc">
+    <input type="checkbox" />
+    <div class="btns-container">
+    <div class="btn open-btn">展开</div>
+    <div class="btn close-btn">收起</div>
+    </div>
+    <div class="desc-detail">
+      <div id="task-content">
+          。。。很多内容
+      </div>
+    </div>
+  </div>
+</body>
+```
+
+```less
+@NAContentLimit: 188px;
+.task-desc {
+  padding: 50px 0;
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 24px;
+  font-weight: 400;
+  & > .desc-detail {
+    overflow: hidden;
+    padding: 16px;
+    margin-bottom: 1px;
+    max-height: @NAContentLimit;
+    transition: max-height .2s;  // 设置不同过度时间
+    background-color: #fff;
+  }
+
+  & > .btns-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: #0e0e0e;
+    background-color: #fff;
+    .btn {
+      position: relative;
+      font-size: 14px;
+      color: #fb7299;
+      letter-spacing: 0;
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid #fb7299;
+        border-right: 1px solid #fb7299;
+        margin-left: 6px;
+      }
+    }
+    .open-btn {
+      display: block;
+      &::after {
+        margin-top: -3px;
+        transform: rotate(135deg);
+      }
+    }
+    .close-btn {
+      display: none;
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  & > [type='checkbox'] {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    margin: -30px auto 0;
+    z-index: 1000;
+    opacity: 0;
+
+    &:checked + .btns-container .open-btn {
+      display: none;
+    }
+    &:checked + .btns-container .close-btn {
+      display: block;
+    }
+    &:checked + .btns-container + .desc-detail {
+      max-height: 1999px; // 不易过大，太大会有延迟，此时可以根据不同状态设置过度周期弥补交互
+      transition: max-height .5s; // 设置不同过度时间
+    }
+  }
+}
+```
+注意点：
+1）不用height的原因：很多时候我们的元素内容都是动态的，换句话说就是高度不固定的，而如果设置height 为auto，则么有动画效果
+2）max-height 不易过大，太大的话则会有“效果延迟”的问题，针对这点的优化方式是对选中和非选中的态的容器设置不同过渡周期
+3）巧妙的利用checkbox的选中态，注意要将它放在内容的上面
 ### 特殊现象
 
 #### transform + position:fixed
@@ -1373,4 +1477,7 @@ html,body{
 ### 参考文章
 
 [8则未必知道且超级实用的纯CSS布局排版技巧 | 网易四年实践](https://juejin.cn/post/6986873449721364510)
+
 [CSS sticky实现返回顶部](https://juejin.cn/post/6992018973856383013)
+
+[CSS展开收起动画效果](https://zhuanlan.zhihu.com/p/52582555)
